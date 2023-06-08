@@ -3404,6 +3404,11 @@ events@^3.2.0:
   resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
   integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
 
+example-kit-dev@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/example-kit-dev/-/example-kit-dev-1.1.0.tgz#1757ed62eea3598fb854421b1125f4004c4c5c88"
+  integrity sha512-y7BqaNFPj2gnTYLvlXAmndaeYuV3QyzXC7KtCB8Uyoqo/fu38zmMzq0WhqwdeRUwrmvjWNZdx8OyS6ljjz5icw==
+
 execa@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-4.1.0.tgz#4e5491ad1572f2f17a77d388c6c857135b22847a"
