@@ -11,7 +11,7 @@ const lifeCycles = singleSpaReact({
   rootComponent: () => {
     return (
       <AcceptAudioProvider>
-        <App />;
+        <App />
       </AcceptAudioProvider>
     );
   },

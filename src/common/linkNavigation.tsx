@@ -24,6 +24,7 @@ export const LinkNavigation = ({ href, children, icon }: Props) => {
           width="8"
           height="8"
           viewBox="0 0 8 8"
+          className="w-[26px] h-auto"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >

@@ -10,10 +10,12 @@ export const LinkNavigationWithSound = ({
   to,
   content,
   fontSize = undefined,
+  isActive = false,
 }: {
   to: string;
   content: ReactNode;
   fontSize?: string;
+  isActive?: boolean;
 }) => {
   const clickSound = useAudio(ClickSound);
   const hoverSound = useAudio(HoverSound);
@@ -34,7 +36,9 @@ export const LinkNavigationWithSound = ({
       className="inline-block"
     >
       <div className="group py-[11px] transition-all duration-150 flex items-center justify-center px-[36px] border-2 border-transparent hover:border-2 hover:bg-black/20 hover:border-white">
-        <Text fontSize={fontSize}>{content}</Text>
+        <Text isActive={isActive} fontSize={fontSize}>
+          {content}
+        </Text>
       </div>
     </Link>
   );

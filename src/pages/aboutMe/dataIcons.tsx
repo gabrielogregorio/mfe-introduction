@@ -1,6 +1,7 @@
 export const dataIcons = {
   linkedin: (
     <svg
+      className="w-[26px] h-auto"
       width="14"
       height="13"
       viewBox="0 0 14 13"
@@ -15,6 +16,7 @@ export const dataIcons = {
   ),
   youtube: (
     <svg
+      className="w-[26px] h-auto"
       width="14"
       height="10"
       viewBox="0 0 14 10"
@@ -29,6 +31,7 @@ export const dataIcons = {
   ),
   twitter: (
     <svg
+      className="w-[26px] h-auto"
       width="14"
       height="11"
       viewBox="0 0 14 11"
@@ -43,6 +46,7 @@ export const dataIcons = {
   ),
   github: (
     <svg
+      className="w-[26px] h-auto"
       width="14"
       height="13"
       viewBox="0 0 14 13"

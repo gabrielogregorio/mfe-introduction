@@ -14,12 +14,12 @@ const Router = () => {
       <div className="min-h-screen min-w-screen max-h-screen max-w-screen flex items-center justify-center bg-black overflow-hidden">
         <button
           type="button"
-          className="text-white"
+          className="text-white text-[32px] uppercase w-full h-screen"
           onClick={() => {
             setAcceptAudio(true);
           }}
         >
-          Continuar
+          Clique para continuar
         </button>
       </div>
     );
