@@ -1,5 +1,8 @@
 import { ReactNode } from "react";
-export declare const ButtonWithSound: ({ content, isActive, }: {
+type Props = {
     content: ReactNode;
     isActive?: boolean;
-}) => JSX.Element;
+    onClick?: () => void;
+};
+export declare const ButtonWithSound: ({ content, isActive, onClick, }: Props) => JSX.Element;
+export {};
