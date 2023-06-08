@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { About } from "./about.me";
-import { Games } from "./games";
-import Componente from "./introduction";
-import { Galeria } from "./gallery";
+import { About } from "./pages/aboutMe";
+import { Games } from "./pages/games";
+import Componente from "./pages/introduction";
+import { Galeria } from "./pages/gallery";
 import { AcceptAudioContext } from "./contexts/acceptAudio";
 import { useContext } from "react";
 
