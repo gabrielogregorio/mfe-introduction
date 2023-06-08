@@ -1,6 +1,6 @@
-import Bg1 from "./assets/bg1.webp";
-import { BlockLevel } from "../../common/blockLevel";
-import { InsideLink } from "../../common/InsideLink";
+import Bg1 from "../../assets/bg1.webp";
+import { LinkNavigationWithSound } from "../../common/linkNavigationWithSound";
+import { NavigationLevel } from "../../common/navigationLevel";
 
 const Introduction = () => {
   return (
@@ -13,37 +13,43 @@ const Introduction = () => {
         <div className="absolute h-screen overflow-y-auto scrollbar w-screen top-0 bg-black/70 left-0 z-20 animate-fadeOutDrop">
           <div className="mt-[268px] ml-[62px]">
             <div>
-              <InsideLink to="/about" content="INICIAR" />
+              <LinkNavigationWithSound to="/about" content="INICIAR" />
             </div>
             <div className="mt-[26px]">
-              <InsideLink to="" content="UTILITÁRIOS" />
-              <BlockLevel level={1}>
+              <LinkNavigationWithSound to="" content="UTILITÁRIOS" />
+              <NavigationLevel level={1}>
                 <div className="mt-[26px]">
-                  <InsideLink
+                  <LinkNavigationWithSound
                     to="financing-money"
                     content="Planejador financeiro"
                   />
                 </div>
                 <div className="mt-[26px]">
-                  <InsideLink to="tasks" content="Minhas Tasks" />
+                  <LinkNavigationWithSound to="tasks" content="Minhas Tasks" />
                 </div>
 
                 <div className="mt-[26px]">
-                  <InsideLink to="ux" content="Guia Ux" />
+                  <LinkNavigationWithSound to="ux" content="Guia Ux" />
                 </div>
-              </BlockLevel>
+              </NavigationLevel>
             </div>
             <div className="mt-[26px]">
-              <InsideLink to="/" content="ENTRETERIMENTO" />
+              <LinkNavigationWithSound to="/" content="ENTRETERIMENTO" />
 
-              <BlockLevel level={1}>
+              <NavigationLevel level={1}>
                 <div className="mt-[26px]">
-                  <InsideLink to="galeria" content="ANÁLISE DE JOGOS" />
+                  <LinkNavigationWithSound
+                    to="galeria"
+                    content="ANÁLISE DE JOGOS"
+                  />
                 </div>
                 <div className="mt-[26px]">
-                  <InsideLink to="galeria" content="MINHA GALERIA" />
+                  <LinkNavigationWithSound
+                    to="galeria"
+                    content="MINHA GALERIA"
+                  />
                 </div>
-              </BlockLevel>
+              </NavigationLevel>
             </div>
           </div>
 

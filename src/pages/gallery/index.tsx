@@ -1,7 +1,6 @@
-import { Text } from "../Text";
-import { InsideLink } from "../InsideLink";
-
-import Bg1 from "../assets/bg1.webp";
+import { Text } from "../../common/Text";
+import { LinkNavigationWithSound } from "../../common/linkNavigationWithSound";
+import Bg1 from "../../assets/bg1.webp";
 import { dataGalleryImages } from "./data";
 import { GalleryImage } from "./galleryImage";
 
@@ -13,7 +12,11 @@ export const Galeria = () => {
       </div>
       <div className="absolute h-screen w-screen top-0 left-0 z-20 bg-black/80 animate-fadeInDrop transition-all duration-200 pt-[80px] px-[90px] flex flex-col">
         <div className="flex items-center animate-fadeIn">
-          <InsideLink to="/" fontSize="text-[36px]" content={"INICIO"} />
+          <LinkNavigationWithSound
+            to="/"
+            fontSize="text-[36px]"
+            content={"INICIO"}
+          />
 
           <div className="h-[25px] w-[2px] bg-white/70 mx-[24px]"></div>
           <Text fontSize="text-[36px]">Galeria</Text>
@@ -51,7 +54,7 @@ export const Galeria = () => {
                 />
               </svg>
             </span>
-            <InsideLink to="/" content="VOLTAR" />
+            <LinkNavigationWithSound to="/" content="VOLTAR" />
           </div>
         </div>
       </div>

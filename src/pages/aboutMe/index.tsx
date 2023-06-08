@@ -1,11 +1,11 @@
-import Bg1 from "./assets/bg1.webp";
+import Bg1 from "../../assets/bg1.webp";
 import { Text } from "../../common/Text";
-import { BlockLevel } from "../../common/blockLevel";
-import { ButtonLink } from "../../common/buttonLink";
 import { dataIcons } from "./dataIcons";
-import { ButtonWithArround } from "../../common/buttonWithArround";
+import { ButtonWithMarking } from "../../common/buttonWithMarking";
 import Profile from "./assets/profile.png";
-import { InsideLink } from "../../common/InsideLink";
+import { LinkNavigationWithSound } from "../../common/linkNavigationWithSound";
+import { NavigationLevel } from "../../common/navigationLevel";
+import { LinkNavigation } from "../../common/linkNavigation";
 
 export const About = () => {
   return (
@@ -15,7 +15,11 @@ export const About = () => {
       </div>
       <div className="absolute h-screen w-screen top-0 left-0 z-20 bg-black/80 animate-fadeInDrop transition-all duration-200 pt-[80px] px-[90px] flex flex-col">
         <div className="flex items-center animate-fadeIn">
-          <InsideLink to="/" fontSize="text-[36px]" content={"INICIO"} />
+          <LinkNavigationWithSound
+            to="/"
+            fontSize="text-[36px]"
+            content={"INICIO"}
+          />
 
           <div className="h-[25px] w-[2px] bg-white/70 mx-[24px]"></div>
           <Text fontSize="text-[36px]">PERFIL</Text>
@@ -28,46 +32,46 @@ export const About = () => {
               <Text fontSize="text-[24px]">INFORMAÇÔES GERAIS</Text>
             </h2>
 
-            <BlockLevel level={1}>
+            <NavigationLevel level={1}>
               <div className="flex flex-col items-start gap-[12px] mt-[17px]">
-                <ButtonWithArround isActive={true} content="INTRODUÇÃO" />
-                <ButtonWithArround isActive={false} content="ESTUDOS" />
-                <ButtonWithArround isActive={false} content="PROFESSIONAL" />
-                <ButtonWithArround isActive={false} content="REDES SOCIAIS" />
+                <ButtonWithMarking isActive={true} content="INTRODUÇÃO" />
+                <ButtonWithMarking isActive={false} content="ESTUDOS" />
+                <ButtonWithMarking isActive={false} content="PROFESSIONAL" />
+                <ButtonWithMarking isActive={false} content="REDES SOCIAIS" />
 
-                <BlockLevel level={2}>
+                <NavigationLevel level={2}>
                   <div className="flex flex-col gap-[12px]">
-                    <ButtonLink
+                    <LinkNavigation
                       href="https://github.com/gabrielogregorio"
                       icon={dataIcons.github}
                     >
                       github.com/gabrielogregorio
-                    </ButtonLink>
+                    </LinkNavigation>
 
-                    <ButtonLink
+                    <LinkNavigation
                       href="https://twitter.com/gregoriodev"
                       icon={dataIcons.twitter}
                     >
                       twitter.com/gregoriodev
-                    </ButtonLink>
+                    </LinkNavigation>
 
-                    <ButtonLink
+                    <LinkNavigation
                       href="https://youtube.com/@gameplaysdiferenciadas"
                       icon={dataIcons.youtube}
                     >
                       youtube.com/@gameplaysdiferenciadas
-                    </ButtonLink>
+                    </LinkNavigation>
 
-                    <ButtonLink
+                    <LinkNavigation
                       href="https://linkedin.com/in/gabrielogregorio"
                       icon={dataIcons.linkedin}
                     >
                       linkedin.com/in/gabrielogregorio
-                    </ButtonLink>
+                    </LinkNavigation>
                   </div>
-                </BlockLevel>
+                </NavigationLevel>
               </div>
-            </BlockLevel>
+            </NavigationLevel>
           </div>
           <div>
             <Text>Introdução</Text>
@@ -118,7 +122,7 @@ export const About = () => {
                 />
               </svg>
             </span>
-            <InsideLink to="/" content="VOLTAR" />
+            <LinkNavigationWithSound to="/" content="VOLTAR" />
           </div>
         </div>
       </div>

@@ -26,6 +26,7 @@ export const dataGames: dataGamesType[] = [
     available: 10,
     imagens: [
       <img
+        alt=""
         src={HorizonZeroDawn}
         width={1100}
         height={620}
@@ -90,6 +91,7 @@ export const dataGames: dataGamesType[] = [
     available: 10,
     imagens: [
       <img
+        alt=""
         src={Cyberpunk}
         width={1100}
         height={620}
@@ -203,6 +205,7 @@ export const dataGames: dataGamesType[] = [
     available: 10,
     imagens: [
       <img
+        alt=""
         src={Valorant}
         width={1100}
         height={620}
@@ -273,6 +276,7 @@ export const dataGames: dataGamesType[] = [
     available: 10,
     imagens: [
       <img
+        alt=""
         src={farcry3}
         width={1100}
         height={620}
@@ -324,6 +328,7 @@ export const dataGames: dataGamesType[] = [
     available: 10,
     imagens: [
       <img
+        alt=""
         src={gtasa}
         width={1100}
         height={620}
@@ -365,6 +370,7 @@ export const dataGames: dataGamesType[] = [
     available: 10,
     imagens: [
       <img
+        alt=""
         src={gta3}
         width={1100}
         height={620}
@@ -404,6 +410,7 @@ export const dataGames: dataGamesType[] = [
     available: 10,
     imagens: [
       <img
+        alt=""
         src={cod4}
         width={1100}
         height={620}
@@ -456,6 +463,7 @@ export const dataGames: dataGamesType[] = [
     available: 10,
     imagens: [
       <img
+        alt=""
         src={guitarhero}
         width={1100}
         height={620}
@@ -501,6 +509,7 @@ export const dataGames: dataGamesType[] = [
     video: ["SXViTxTYqmw"],
     imagens: [
       <img
+        alt=""
         src={crysis}
         width={1100}
         height={620}
