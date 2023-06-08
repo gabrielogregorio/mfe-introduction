@@ -2,7 +2,7 @@ import { LinkNavigationWithSound } from "./linkNavigationWithSound";
 
 export const ReturnToHome = () => {
   return (
-    <div className="flex-1 mb-[120px] flex flex-col justify-end items-center  animate-fadeIn">
+    <div className="flex-1 mb-[60px] mt-[20px] flex flex-col justify-end items-center  animate-fadeIn">
       <div className="bg-white/70 w-full h-[2px]"></div>
 
       <div className="w-full flex items-center mt-[11px]">

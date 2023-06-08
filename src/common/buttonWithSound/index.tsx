@@ -4,13 +4,17 @@ import ClickSound from "./clicksound.mp3";
 import { ReactNode } from "react";
 import { Text } from "../Text";
 
+type Props = {
+  content: ReactNode;
+  isActive?: boolean;
+  onClick?: () => void;
+};
+
 export const ButtonWithSound = ({
   content,
   isActive = false,
-}: {
-  content: ReactNode;
-  isActive?: boolean;
-}) => {
+  onClick = () => {},
+}: Props) => {
   const clickSound = useAudio(ClickSound);
   const hoverSound = useAudio(HoverSound);
 
@@ -19,6 +23,7 @@ export const ButtonWithSound = ({
   };
 
   const handleClick = () => {
+    onClick();
     clickSound.play();
   };
 

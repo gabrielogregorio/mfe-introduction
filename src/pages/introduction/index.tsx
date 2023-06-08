@@ -14,7 +14,7 @@ const Introduction = () => {
         <div className="absolute min-w-[100vw] min-h-[100vh] max-h-[100vh] max-w-[100vw] overflow-y-auto scrollbar top-0 bg-black/70 left-0 z-20 animate-fadeOutDrop">
           <div className="mt-[268px] ml-[62px]">
             <NavigationSpace>
-              <LinkNavigationWithSound to="/about" content="INICIAR" />
+              <LinkNavigationWithSound to="/about" content="Começar" />
             </NavigationSpace>
 
             <NavigationSpace>

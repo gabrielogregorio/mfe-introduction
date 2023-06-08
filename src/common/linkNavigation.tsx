@@ -13,7 +13,7 @@ export const LinkNavigation = ({ href, children, icon }: Props) => {
       target="_blank"
       rel="noreferrer"
       href={href}
-      className="break-words flex items-center"
+      className="break-words flex items-center "
     >
       {icon ? <span className="mr-[12px]">{icon}</span> : undefined}
 
