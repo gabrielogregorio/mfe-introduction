@@ -31,7 +31,13 @@ module.exports = (webpackConfigEnv, argv) => {
     },
   })(defaultConfig, {
     module: {
-      rules: [tailwindConfig],
+      rules: [
+        tailwindConfig,
+        {
+          test: /\.(mp3|wav|ogg)$/,
+          use: "file-loader",
+        },
+      ],
     },
   });
 
