@@ -1,10 +1,15 @@
 import { ReactNode } from "react";
 export type dataGamesType = {
-    video: string[];
-    imagens: ReactNode[];
     name: string;
-    available: number;
-    content: ReactNode;
+    classificação: "obra de prima" | "excelente" | "muito bom" | "ok" | "jogando...";
     id: string;
+    conteudo: {
+        title: string;
+        media: {
+            youtube?: string;
+            imagem?: string;
+        };
+        description: ReactNode;
+    }[];
 };
 export declare const dataGames: dataGamesType[];
