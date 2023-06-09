@@ -22,7 +22,7 @@ type Props = {
 };
 
 export const AcceptAudioProvider = ({ children }: Props): ReactElement => {
-  const [acceptAudio, setAcceptAudio] = useState<boolean>(false);
+  const [acceptAudio, setAcceptAudio] = useState<boolean>(true);
 
   const value: {
     acceptAudio: boolean;
