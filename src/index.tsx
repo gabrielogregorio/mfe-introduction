@@ -4,10 +4,19 @@ import { Games } from "./pages/games";
 import Componente from "./pages/introduction";
 import { Galeria } from "./pages/gallery";
 import { AcceptAudioContext } from "./contexts/acceptAudio";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 
 const Router = () => {
   const { acceptAudio, setAcceptAudio } = useContext(AcceptAudioContext);
+  const isFirstLoading = useRef(true);
+
+  useEffect(() => {
+    if (acceptAudio) {
+      if (isFirstLoading.current) {
+        isFirstLoading.current = false;
+      }
+    }
+  }, [acceptAudio]);
 
   if (!acceptAudio) {
     return (

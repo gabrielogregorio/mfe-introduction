@@ -1,4 +1,5 @@
 import { Text } from "../../../common/Text";
+import { TextLarge } from "../../../common/textLarge";
 import { dataListIntroductionType } from "./types";
 
 type Props = {
@@ -42,9 +43,7 @@ export const ModelListScreen = ({ title, data }: Props) => {
 
               <div>
                 {job.description.trim() ? (
-                  <p className="text-white font-roboto text-[1rem] font-normal mt-[12px] text-left">
-                    {job.description}
-                  </p>
+                  <TextLarge>{job.description}</TextLarge>
                 ) : undefined}
               </div>
             </button>

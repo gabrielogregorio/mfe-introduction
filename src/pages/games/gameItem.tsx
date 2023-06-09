@@ -1,67 +1,104 @@
+import { useState } from "react";
 import { dataGamesType } from "./data";
+import { PrevAndNextButton } from "./prevAndNextButton";
+import { TextLarge } from "../../common/textLarge";
 
 type Props = {
   game: dataGamesType;
 };
 
 export const GameItem = ({ game }: Props) => {
-  return (
-    <div className="flex flex-col items-center justify-center bg-[#212332] w-full">
-      <div className="max-w-[1100px] max-h-[400px] h-full w-full object-cover relative">
-        <div className="max-w-[1100px] max-h-[400px] h-full w-full overflow-hidden">
-          {game.imagens[0]}
-        </div>
+  const [indexItemSelected, setIndexItemSelected] = useState(0);
 
-        <button
-          type="button"
-          className="w-[51px] h-[51px] bg-[#21233265] rounded-[3px] flex items-center justify-center absolute right-2 bottom-2"
-        >
+  const nextContent = () => {
+    const newIndex = indexItemSelected + 1;
+    if (newIndex < game.conteudo.length) {
+      setIndexItemSelected(newIndex);
+    } else {
+      setIndexItemSelected(0);
+    }
+  };
+
+  const prevContent = () => {
+    const newIndex = indexItemSelected - 1;
+    if (newIndex >= 0) {
+      setIndexItemSelected(newIndex);
+    } else {
+      setIndexItemSelected(game.conteudo.length - 1);
+    }
+  };
+
+  const conteudoSelecionado = game.conteudo[indexItemSelected];
+  return (
+    <div>
+      <div className="flex items-center justify-between">
+        <button type="button" onClick={() => prevContent()} className="py-4">
           <svg
-            width="10"
-            height="19"
-            viewBox="0 0 10 19"
+            width="8"
+            height="12"
+            viewBox="0 0 8 12"
+            className="w-[16px] h-auto"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              d="M5.40309 0.285742C5.23238 0.103906 4.99859 0 4.74996 0C4.50133 0 4.26754 0.103906 4.09684 0.285742L0.237461 4.44199C-0.00375009 4.70176 -0.066836 5.08027 0.0741796 5.40313C0.215195 5.72598 0.538047 5.9375 0.890586 5.9375H2.96871V13.0625H0.890586C0.538047 13.0625 0.215195 13.274 0.0741796 13.5969C-0.066836 13.9197 -0.00375009 14.2982 0.237461 14.558L4.09684 18.7143C4.26383 18.8961 4.50133 19 4.74996 19C4.99859 19 5.23238 18.8961 5.40309 18.7143L9.26246 14.558C9.50367 14.2982 9.56676 13.9197 9.42574 13.5969C9.28473 13.274 8.96187 13.0625 8.60934 13.0625H6.53121V5.9375H8.60934C8.96187 5.9375 9.28473 5.72598 9.42574 5.40313C9.56676 5.08027 9.50367 4.70176 9.26246 4.44199L5.40309 0.285742Z"
+              d="M0.351416 6.84756C-0.117139 6.37901 -0.117139 5.61807 0.351416 5.14952L5.14942 0.35152C5.49427 0.00666394 6.00781 -0.0945439 6.45762 0.0928779C6.90743 0.2803 7.19981 0.715118 7.19981 1.20241V10.7984C7.19981 11.282 6.90743 11.7205 6.45762 11.908C6.00781 12.0954 5.49427 11.9904 5.14942 11.6493L0.351416 6.85131V6.84756Z"
               fill="white"
             />
           </svg>
         </button>
 
-        <div className="absolute bottom-2 left-1 flex flex-col items-start justify-center">
-          <div className="uppercase  text-white font-normal text-[12px] rounded-[3px] px-[5px] py-[3px] bg-[#FF5F5F]">
-            Nota {game.available}
-          </div>
-          <div className="text-white text-[24px] font-bold rounded-[3px] px-[5px] py-[3px] bg-[#212332] mt-[2px]">
-            {game.name}
-          </div>
+        <div className="flex-1 ml-[10px] mb-3">
+          <TextLarge>
+            {indexItemSelected + 1} de {game.conteudo.length}.{" "}
+            {conteudoSelecionado.title}
+          </TextLarge>
         </div>
+
+        <button type="button" onClick={() => nextContent()} className="py-4">
+          <svg
+            width="8"
+            height="12"
+            viewBox="0 0 8 12"
+            className="w-[16px] h-auto"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.84878 5.15244C7.31733 5.62099 7.31733 6.38193 6.84878 6.85048L2.05078 11.6485C1.70592 11.9933 1.19239 12.0945 0.742576 11.9071C0.292763 11.7197 0.000385284 11.2849 0.000385284 10.7976L0.000385284 1.20159C0.000385284 0.718039 0.292763 0.279471 0.742576 0.0920486C1.19239 -0.0953732 1.70592 0.00958347 2.05078 0.350691L6.84878 5.14869V5.15244Z"
+              fill="white"
+            />
+          </svg>
+        </button>
       </div>
 
-      <div className="max-w-[1100px] max-h-[400px] h-full w-full">
-        <h3 className="mt-[9px] text-white font-normal text-[14px]">
-          conteudo da comunidade
-        </h3>
-
-        <div className="flex gap-[17px] w-full mt-[13px]">
-          {game.video.map((item) => {
-            return (
-              <div key={item}>
-                <button type="button">
-                  <img
-                    src={`https://img.youtube.com/vi/${item}/hqdefault.jpg`}
-                    alt=""
-                    className="w-[127px] h-[60px] object-cover rounded-[3px]"
-                  />
-                </button>
-              </div>
-            );
-          })}
-        </div>
+      <div>
+        {conteudoSelecionado.media.youtube ? (
+          <iframe
+            width="560"
+            height="315"
+            src={`https://www.youtube.com/embed/${conteudoSelecionado.media.youtube}`}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className=" min-h-[422px] w-full h-full object-cover border-2 border-white rounded-[3px]"
+          ></iframe>
+        ) : conteudoSelecionado.media.imagem ? (
+          <img
+            src={conteudoSelecionado.media.imagem}
+            alt=""
+            className="w-full h-full object-cover border-2 border-white rounded-[3px]"
+          />
+        ) : undefined}
       </div>
 
+      <div>{conteudoSelecionado.description}</div>
+
+      <div className="flex items-center justify-between mt-[23px]">
+        <PrevAndNextButton typeAction="prev" action={() => prevContent()} />
+        <PrevAndNextButton typeAction="next" action={() => nextContent()} />
+      </div>
       <div className="h-[10rem]"></div>
     </div>
   );

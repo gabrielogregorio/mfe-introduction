@@ -17,11 +17,11 @@ const Introduction = () => {
               <LinkNavigationWithSound to="/about" content="Começar" />
             </NavigationSpace>
 
-            <NavigationSpace>
+            {/* <NavigationSpace>
               <LinkNavigationWithSound to="" isActive content="UTILITÁRIOS" />
-            </NavigationSpace>
+            </NavigationSpace> */}
 
-            <NavigationLevel level={1}>
+            {/* <NavigationLevel level={1}>
               <NavigationSpace>
                 <LinkNavigationWithSound
                   to="financing-money"
@@ -36,7 +36,7 @@ const Introduction = () => {
               <NavigationSpace>
                 <LinkNavigationWithSound to="ux" content="Guia Ux" />
               </NavigationSpace>
-            </NavigationLevel>
+            </NavigationLevel> */}
 
             <NavigationSpace>
               <LinkNavigationWithSound
@@ -49,7 +49,7 @@ const Introduction = () => {
             <NavigationLevel level={1}>
               <NavigationSpace>
                 <LinkNavigationWithSound
-                  to="galeria"
+                  to="Games"
                   content="ANÁLISE DE JOGOS"
                 />
               </NavigationSpace>
