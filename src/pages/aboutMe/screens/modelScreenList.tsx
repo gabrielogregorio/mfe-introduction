@@ -1,4 +1,4 @@
-import { Text } from "../../../common/Text";
+import { Text } from "ogregorio-component-library-studies";
 import { TextLarge } from "../../../common/textLarge";
 import { dataListIntroductionType } from "./types";
 

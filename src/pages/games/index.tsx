@@ -1,15 +1,18 @@
 import Bg1 from "../../assets/bg1.webp";
-import { Text } from "../../common/Text";
-import { NavigationLevel } from "../../common/navigationLevel";
-import { NavigationSpace } from "../../common/navigationSpace";
-import { Breadcrumb } from "../../common/breacrumb";
 import { ReturnToHome } from "../../common/returnToHome";
-import { ButtonWithSound } from "../../common/buttonWithSound";
-import { useHandleKeyboard } from "../../common/useHandleKeyboard";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { dataGames, dataGamesType } from "./data";
 import { GameItem } from "./gameItem";
+import {
+  ButtonWithSound,
+  NavigationLevel,
+  NavigationSpace,
+  Text,
+  TextVariantEnum,
+  Breadcrumb,
+  useHandleKeyboard,
+} from "ogregorio-component-library-studies";
 
 export const Games = () => {
   const navigate = useNavigate();
@@ -46,7 +49,7 @@ export const Games = () => {
         <div className="flex gap-6 mt-[64px] animate-fadeIn  max-h-full overflow-y-hidden px-[2rem]">
           <div className="flex-1 overflow-y-scroll scrollbar">
             <h2>
-              <Text fontSize="text-[24px]">INFORMAÇÔES GERAIS</Text>
+              <Text variant={TextVariantEnum.button}>INFORMAÇÔES GERAIS</Text>
             </h2>
 
             <div>

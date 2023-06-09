@@ -1,13 +1,7 @@
 import Bg1 from "../../assets/bg1.webp";
-import { Text } from "../../common/Text";
 import { dataIcons } from "./dataIcons";
-import { NavigationLevel } from "../../common/navigationLevel";
 import { LinkNavigation } from "../../common/linkNavigation";
-import { NavigationSpace } from "../../common/navigationSpace";
-import { Breadcrumb } from "../../common/breacrumb";
 import { ReturnToHome } from "../../common/returnToHome";
-import { ButtonWithSound } from "../../common/buttonWithSound";
-import { useHandleKeyboard } from "../../common/useHandleKeyboard";
 import { useNavigate } from "react-router-dom";
 import { ReactNode, useState } from "react";
 import { AboutIntroductionScreen } from "./screens/introduction";
@@ -15,6 +9,15 @@ import { ModelListScreen } from "./screens/modelScreenList";
 import { dataStudies } from "./dataStudies";
 import { dataJob } from "./dataJobs";
 import { dataExtraCourses } from "./dataExtraCourses";
+import {
+  ButtonWithSound,
+  NavigationLevel,
+  NavigationSpace,
+  Text,
+  Breadcrumb,
+  TextVariantEnum,
+  useHandleKeyboard,
+} from "ogregorio-component-library-studies";
 
 enum AboutScreensEnum {
   "Introduction" = "Introduction",
@@ -61,7 +64,9 @@ export const About = () => {
         <div className="flex gap-6 mt-[64px] animate-fadeIn  max-h-full overflow-y-hidden px-[2rem]">
           <div className="flex-1 overflow-y-scroll scrollbar">
             <h2>
-              <Text fontSize="text-[24px]">INFORMAÇÔES GERAIS</Text>
+              <Text variant={TextVariantEnum.textTitle}>
+                INFORMAÇÔES GERAIS
+              </Text>
             </h2>
 
             <div>

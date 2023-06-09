@@ -1,9 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import Bg1 from "../../assets/bg1.webp";
-import { LinkNavigationWithSound } from "../../common/linkNavigationWithSound";
-import { NavigationLevel } from "../../common/navigationLevel";
-import { NavigationSpace } from "../../common/navigationSpace";
+import {
+  ButtonWithSound,
+  NavigationLevel,
+  NavigationSpace,
+} from "ogregorio-component-library-studies";
 
 const Introduction = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="relative min-w-[100vw] min-h-[100vh] max-h-[100vh] max-w-[100vw]">
@@ -14,48 +18,64 @@ const Introduction = () => {
         <div className="absolute min-w-[100vw] min-h-[100vh] max-h-[100vh] max-w-[100vw] overflow-y-auto scrollbar top-0 bg-black/70 left-0 z-20 animate-fadeOutDrop">
           <div className="mt-[268px] ml-[62px]">
             <NavigationSpace>
-              <LinkNavigationWithSound to="/about" content="Começar" />
+              <ButtonWithSound
+                onClick={() => navigate("/about")}
+                content="Começar"
+              />
             </NavigationSpace>
 
             <NavigationSpace>
-              <LinkNavigationWithSound to="" isActive content="UTILITÁRIOS" />
+              <ButtonWithSound
+                onClick={() => navigate("/")}
+                isActive
+                content="UTILITÁRIOS"
+              />
             </NavigationSpace>
 
             <NavigationLevel level={1}>
               <NavigationSpace>
-                <LinkNavigationWithSound
-                  to="remaining-money"
+                <ButtonWithSound
+                  onClick={() => navigate("remaining-money")}
                   content="Planejador financeiro"
                 />
               </NavigationSpace>
 
               <NavigationSpace>
-                <LinkNavigationWithSound to="tasks" content="Minhas Tasks" />
+                <ButtonWithSound
+                  onClick={() => navigate("tasks")}
+                  content="Minhas Tasks"
+                />
               </NavigationSpace>
 
               <NavigationSpace>
-                <LinkNavigationWithSound to="ux" content="Guia Ux" />
+                <ButtonWithSound
+                  onClick={() => navigate("ux")}
+                  content="Guia Ux"
+                />
               </NavigationSpace>
             </NavigationLevel>
 
             <NavigationSpace>
-              <LinkNavigationWithSound
+              <ButtonWithSound
                 isActive
-                to="/"
+                onClick={() => navigate("/")}
                 content="ENTRETERIMENTO"
               />
             </NavigationSpace>
 
             <NavigationLevel level={1}>
               <NavigationSpace>
-                <LinkNavigationWithSound
-                  to="Games"
+                <ButtonWithSound
+                  onClick={() => navigate("Games")}
                   content="ANÁLISE DE JOGOS"
                 />
               </NavigationSpace>
 
               <NavigationSpace>
-                <LinkNavigationWithSound to="galeria" content="MINHA GALERIA" />
+                <ButtonWithSound
+                  onClick={() => navigate("galeria")}
+                  content="MINHA GALERIA"
+                />
               </NavigationSpace>
             </NavigationLevel>
           </div>

@@ -1,4 +1,4 @@
-import { Text } from "../../../common/Text";
+import { Text } from "ogregorio-component-library-studies";
 import Profile from "../assets/profile.png";
 
 export const AboutIntroductionScreen = () => {

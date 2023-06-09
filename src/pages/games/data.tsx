@@ -261,8 +261,12 @@ export const dataGames: dataGamesType[] = [
       },
       {
         title: "Um vídeo andando pelos arredores dessa cidade maravilhosa",
-        description:
-          "Torço demais para um cyberpunk 2, se eles tiverem aprendido, vai ser fácil o jogo do ano",
+        description: (
+          <TextLarge>
+            Torço demais para um cyberpunk 2, se eles tiverem aprendido, vai ser
+            fácil o jogo do ano
+          </TextLarge>
+        ),
         media: {
           youtube: "dd0XckIHKFY",
         },

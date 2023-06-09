@@ -1,4 +1,4 @@
-import { Text } from "../../common/Text";
+import { Text } from "ogregorio-component-library-studies";
 
 export const PrevAndNextButton = ({
   action,
@@ -31,7 +31,7 @@ export const PrevAndNextButton = ({
         </span>
       ) : undefined}
 
-      <Text fontSize="2rem">{typeAction == "next" ? "PROXIMO" : "VOLTAR"}</Text>
+      <Text>{typeAction == "next" ? "PROXIMO" : "VOLTAR"}</Text>
 
       {typeAction === "next" ? (
         <span className="ml-[9px]">

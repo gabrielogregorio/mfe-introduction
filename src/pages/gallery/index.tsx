@@ -1,11 +1,14 @@
-import { Text } from "../../common/Text";
 import Bg1 from "../../assets/bg1.webp";
 import { dataGalleryImages } from "./data";
 import { GalleryImage } from "./galleryImage";
-import { Breadcrumb } from "../../common/breacrumb";
 import { ReturnToHome } from "../../common/returnToHome";
-import { useHandleKeyboard } from "../../common/useHandleKeyboard";
 import { useNavigate } from "react-router-dom";
+import {
+  Text,
+  Breadcrumb,
+  TextVariantEnum,
+  useHandleKeyboard,
+} from "ogregorio-component-library-studies";
 
 export const Galeria = () => {
   const navigate = useNavigate();
@@ -23,7 +26,9 @@ export const Galeria = () => {
       <div className="absolute h-screen w-screen top-0 left-0 z-20 bg-black/80 animate-fadeInDrop transition-all duration-200 pt-[80px] px-[90px] flex flex-col">
         <Breadcrumb content="GALERIA" />
         <div className="mt-[24px]">
-          <Text fontSize="text-[28px]">Algumas imagens diversas</Text>
+          <Text variant={TextVariantEnum.textTitle}>
+            Algumas imagens diversas
+          </Text>
         </div>
         <div className="mt-[64px] animate-fadeIn overflow-y-auto scrollbar">
           <div className="grid grid-cols-3 gap-[36px] px-[1rem]">

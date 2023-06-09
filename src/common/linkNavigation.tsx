@@ -1,5 +1,5 @@
+import { Text } from "ogregorio-component-library-studies";
 import { ReactNode } from "react";
-import { Text } from "./Text";
 
 type Props = {
   href: string;
