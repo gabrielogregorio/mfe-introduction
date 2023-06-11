@@ -48,7 +48,7 @@ export const GameItem = ({ game }: Props) => {
           </svg>
         </button>
 
-        <div className="flex-1 ml-[10px] mb-3">
+        <div className="flex-1 ml-[10px]">
           <TitleText
             content={`${indexItemSelected + 1} de ${game.conteudo.length}. ${
               conteudoSelecionado.title

@@ -37,7 +37,7 @@ export const Games = () => {
 
   return (
     <LayoutScreen
-      screenTitle="ANÁLISE_DE_JOGOS"
+      screenTitle="ANÁLISE DE JOGOS"
       onReturn={() => navigate("/")}
       bg={Bg1}
     >

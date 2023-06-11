@@ -1,10 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { ReactNode, useState } from "react";
-// import { AboutIntroductionScreen } from "./screens/introduction";
 import { ModelListScreen } from "./screens/modelScreenList";
-// import { dataStudies } from "./dataStudies";
-// import { dataJob } from "./dataJobs";
-// import { dataExtraCourses } from "./dataExtraCourses";
+
 import {
   LayoutScreen,
   ItemSimpleMenu,
@@ -67,28 +64,30 @@ export const About = () => {
           <div className="flex flex-col justify-center items-start">
             <TitleSimpleMenu content="INFORMAÇÕES GERAIS" />
 
-            <div className="mt-[20px]"></div>
-
             <ItemSimpleMenu
               level="1"
+              isSelected={screenSelected === AboutScreensEnum.Introduction}
               onClick={() => setScreenSelected(AboutScreensEnum.Introduction)}
               content="INTRODUÇÃO"
             />
 
             <ItemSimpleMenu
               level="1"
+              isSelected={screenSelected === AboutScreensEnum.Professional}
               onClick={() => setScreenSelected(AboutScreensEnum.Professional)}
               content="PROFESSIONAL"
             />
 
             <ItemSimpleMenu
               level="1"
+              isSelected={screenSelected === AboutScreensEnum.Courses}
               onClick={() => setScreenSelected(AboutScreensEnum.Courses)}
               content="CURSOS"
             />
 
             <ItemSimpleMenu
               level="1"
+              isSelected={screenSelected === AboutScreensEnum.Studies}
               onClick={() => setScreenSelected(AboutScreensEnum.Studies)}
               content="ESTUDOS"
             />
@@ -96,8 +95,6 @@ export const About = () => {
             <div className="mt-[35px]"></div>
 
             <TitleSimpleMenu content="REDES SOCIAIS" />
-
-            <div className="mt-[20px]"></div>
 
             <LinkExternal
               level="1"
