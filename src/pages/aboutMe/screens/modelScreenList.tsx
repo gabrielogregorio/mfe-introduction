@@ -1,5 +1,4 @@
-import { Text } from "ogregorio-component-library-studies";
-import { TextLarge } from "../../../common/textLarge";
+import { Text, TitleText } from "ogregorio-component-library-studies";
 import { dataListIntroductionType } from "./types";
 
 type Props = {
@@ -11,7 +10,7 @@ export const ModelListScreen = ({ title, data }: Props) => {
   return (
     <div className="animate-fadeIn">
       <div className="mt-[1rem]">
-        <Text>{title}</Text>
+        <TitleText content={title} />
       </div>
 
       <div className="flex flex-col gap-[20px]">
@@ -32,18 +31,14 @@ export const ModelListScreen = ({ title, data }: Props) => {
                 </div>
 
                 <div className="ml-[20px]">
-                  <div className="text-white font-roboto text-[1rem] font-bold text-left">
-                    {job.title}
-                  </div>
-                  <div className="text-white font-roboto text-[1rem] font-bold text-left">
-                    {job.subtitle}
-                  </div>
+                  <Text content={job.title} />
+                  <Text content={job.subtitle} />
                 </div>
               </div>
 
               <div>
                 {job.description.trim() ? (
-                  <TextLarge>{job.description}</TextLarge>
+                  <Text content={job.description} />
                 ) : undefined}
               </div>
             </button>

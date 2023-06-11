@@ -1,10 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Bg1 from "../../assets/bg1.webp";
-import {
-  ButtonWithSound,
-  NavigationLevel,
-  NavigationSpace,
-} from "ogregorio-component-library-studies";
+import { ItemMainMenu } from "ogregorio-component-library-studies";
 
 const Introduction = () => {
   const navigate = useNavigate();
@@ -16,72 +12,35 @@ const Introduction = () => {
         </div>
 
         <div className="absolute min-w-[100vw] min-h-[100vh] max-h-[100vh] max-w-[100vw] overflow-y-auto scrollbar top-0 bg-black/70 left-0 z-20 animate-fadeOutDrop">
-          <div className="mt-[268px] ml-[62px]">
-            <NavigationSpace>
-              <ButtonWithSound
-                onClick={() => navigate("/about")}
-                content="Começar"
-              />
-            </NavigationSpace>
+          <div className="pt-[270px] px-[80px] flex flex-col justify-center items-start">
+            <ItemMainMenu
+              onClick={() => navigate("/about")}
+              content="INICIAR"
+            />
 
-            <NavigationSpace>
-              <ButtonWithSound
-                onClick={() => navigate("/")}
-                isActive
-                content="UTILITÁRIOS"
-              />
-            </NavigationSpace>
+            <ItemMainMenu
+              onClick={() => navigate("remaining-money")}
+              content="QUANTO SOBRA"
+            />
 
-            <NavigationLevel level={1}>
-              <NavigationSpace>
-                <ButtonWithSound
-                  onClick={() => navigate("remaining-money")}
-                  content="Planejador financeiro"
-                />
-              </NavigationSpace>
+            <ItemMainMenu
+              onClick={() => navigate("tasks")}
+              content="MINHAS TASKS"
+            />
 
-              <NavigationSpace>
-                <ButtonWithSound
-                  onClick={() => navigate("tasks")}
-                  content="Minhas Tasks"
-                />
-              </NavigationSpace>
+            <ItemMainMenu onClick={() => navigate("ux")} content="HELP UX" />
 
-              <NavigationSpace>
-                <ButtonWithSound
-                  onClick={() => navigate("ux")}
-                  content="Guia Ux"
-                />
-              </NavigationSpace>
-            </NavigationLevel>
+            <ItemMainMenu
+              onClick={() => navigate("Games")}
+              content="ANÁLISE DE JOGOS"
+            />
 
-            <NavigationSpace>
-              <ButtonWithSound
-                isActive
-                onClick={() => navigate("/")}
-                content="ENTRETERIMENTO"
-              />
-            </NavigationSpace>
-
-            <NavigationLevel level={1}>
-              <NavigationSpace>
-                <ButtonWithSound
-                  onClick={() => navigate("Games")}
-                  content="ANÁLISE DE JOGOS"
-                />
-              </NavigationSpace>
-
-              <NavigationSpace>
-                <ButtonWithSound
-                  onClick={() => navigate("galeria")}
-                  content="MINHA GALERIA"
-                />
-              </NavigationSpace>
-            </NavigationLevel>
+            <ItemMainMenu
+              onClick={() => navigate("galeria")}
+              content="GALERIA"
+            />
           </div>
         </div>
-
-        <div className="h-[20rem]"></div>
       </div>
     </>
   );

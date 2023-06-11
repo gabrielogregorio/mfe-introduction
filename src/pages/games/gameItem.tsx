@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { dataGamesType } from "./data";
 import { PrevAndNextButton } from "./prevAndNextButton";
-import { TextLarge } from "../../common/textLarge";
+import { TitleText } from "ogregorio-component-library-studies";
 
 type Props = {
   game: dataGamesType;
@@ -49,10 +49,11 @@ export const GameItem = ({ game }: Props) => {
         </button>
 
         <div className="flex-1 ml-[10px] mb-3">
-          <TextLarge>
-            {indexItemSelected + 1} de {game.conteudo.length}.{" "}
-            {conteudoSelecionado.title}
-          </TextLarge>
+          <TitleText
+            content={`${indexItemSelected + 1} de ${game.conteudo.length}. ${
+              conteudoSelecionado.title
+            }`}
+          ></TitleText>
         </div>
 
         <button type="button" onClick={() => nextContent()} className="py-4">
@@ -93,7 +94,7 @@ export const GameItem = ({ game }: Props) => {
         ) : undefined}
       </div>
 
-      <div>{conteudoSelecionado.description}</div>
+      {conteudoSelecionado.description}
 
       <div className="flex items-center justify-between mt-[23px]">
         <PrevAndNextButton typeAction="prev" action={() => prevContent()} />

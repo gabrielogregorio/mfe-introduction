@@ -1,17 +1,14 @@
 import Bg1 from "../../assets/bg1.webp";
-import { ReturnToHome } from "../../common/returnToHome";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { dataGames, dataGamesType } from "./data";
 import { GameItem } from "./gameItem";
 import {
-  ButtonWithSound,
-  NavigationLevel,
-  NavigationSpace,
-  Text,
-  TextVariantEnum,
-  Breadcrumb,
   useHandleKeyboard,
+  LayoutScreen,
+  GridDefault,
+  ItemSimpleMenu,
+  TitleSimpleMenu,
 } from "ogregorio-component-library-studies";
 
 export const Games = () => {
@@ -39,61 +36,43 @@ export const Games = () => {
   };
 
   return (
-    <div className="relative min-h-[100vh] max-h-[100vh] h-full max-w-[100vw] w-full">
-      <div className="absolute h-screen w-screen top-0 left-0 z-10">
-        <img src={Bg1} className="w-[100vw] h-[100vh] object-cover" alt="" />
-      </div>
-      <div className="absolute h-screen w-screen max-h-screen max-w-screen top-0 left-0 z-20 bg-black/80 animate-fadeInDrop transition-all duration-200 pt-[80px] px-[90px] flex flex-col">
-        <Breadcrumb content="PERFIL" />
-
-        <div className="flex gap-6 mt-[64px] animate-fadeIn  max-h-full overflow-y-hidden px-[2rem]">
-          <div className="flex-1 overflow-y-scroll scrollbar">
-            <h2>
-              <Text variant={TextVariantEnum.button}>INFORMAÇÔES GERAIS</Text>
-            </h2>
+    <LayoutScreen
+      screenTitle="ANÁLISE_DE_JOGOS"
+      onReturn={() => navigate("/")}
+      bg={Bg1}
+    >
+      <GridDefault
+        left={
+          <div>
+            <TitleSimpleMenu content="JOGOS ZERADOS" />
 
             <div>
-              <NavigationLevel level={1}>
-                <div className="flex flex-col items-start gap-[12px] mt-[17px]">
-                  {dataGames.map((game) => {
-                    return (
-                      <div className="w-full flex-1" key={game.id}>
-                        <NavigationSpace>
-                          <div className="flex w-full justify-between items-center">
-                            <ButtonWithSound
-                              onClick={() => handleSelectNewGame(game.id)}
-                              isActive={gameSelected?.id === game.id}
-                              content={game.name}
-                            />
-                            <div
-                              className={`${
-                                gameSelected?.id === game.id
-                                  ? "text-white"
-                                  : "text-white/70"
-                              } hover:text-white font-roboto text-[1.5rem] font-normal text-right pr-[1rem]`}
-                            >
-                              {game.classificação}
-                            </div>
-                          </div>
-                        </NavigationSpace>
+              {dataGames.map((game) => {
+                return (
+                  <div className="w-full flex-1" key={game.id}>
+                    <div className="flex w-full justify-between items-center">
+                      <ItemSimpleMenu
+                        onClick={() => handleSelectNewGame(game.id)}
+                        content={game.name}
+                      />
+                      <div
+                        className={`${
+                          gameSelected?.id === game.id
+                            ? "text-white"
+                            : "text-white/70"
+                        } hover:text-white font-roboto text-[1.5rem] font-normal text-right pr-[1rem]`}
+                      >
+                        {game.classificação}
                       </div>
-                    );
-                  })}
-                </div>
-              </NavigationLevel>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-            <div className="h-[5rem]"></div>
           </div>
-          <div className="flex-1 overflow-y-scroll scrollbar px-[2rem]">
-            <div>
-              {gameSelected ? <GameItem game={gameSelected} /> : undefined}
-            </div>
-            <div className="h-[15rem]"></div>
-          </div>
-        </div>
-
-        <ReturnToHome />
-      </div>
-    </div>
+        }
+        right={gameSelected ? <GameItem game={gameSelected} /> : undefined}
+      />
+    </LayoutScreen>
   );
 };

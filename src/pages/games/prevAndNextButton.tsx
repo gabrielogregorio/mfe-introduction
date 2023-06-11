@@ -31,7 +31,7 @@ export const PrevAndNextButton = ({
         </span>
       ) : undefined}
 
-      <Text>{typeAction == "next" ? "PROXIMO" : "VOLTAR"}</Text>
+      <Text content={typeAction == "next" ? "PROXIMO" : "VOLTAR"} />
 
       {typeAction === "next" ? (
         <span className="ml-[9px]">

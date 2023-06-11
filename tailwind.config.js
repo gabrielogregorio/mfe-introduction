@@ -5,6 +5,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      backgroundImage: {
+        default: "./src/assets/bg1.webp",
+      },
       boxShadow: {
         ...defaultConfig.theme.extend.boxShadow,
       },
