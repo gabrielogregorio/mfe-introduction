@@ -2,14 +2,16 @@ import { useState } from "react";
 import { dataGamesType } from "./data";
 import { PrevAndNextButton } from "./prevAndNextButton";
 import { TitleText } from "ogregorio-component-library-studies";
+import { ExpandedMode } from "../gallery/ExpandedMode";
 
 type Props = {
   game: dataGamesType;
 };
 
 export const GameItem = ({ game }: Props) => {
-  const [indexItemSelected, setIndexItemSelected] = useState(0);
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
+  const [indexItemSelected, setIndexItemSelected] = useState(0);
   const nextContent = () => {
     const newIndex = indexItemSelected + 1;
     if (newIndex < game.conteudo.length) {
@@ -28,9 +30,21 @@ export const GameItem = ({ game }: Props) => {
     }
   };
 
-  const conteudoSelecionado = game.conteudo[indexItemSelected];
+  const contentSelected = game.conteudo[indexItemSelected];
+
   return (
     <div>
+      {isExpanded ? (
+        <ExpandedMode
+          title={contentSelected.title}
+          description={contentSelected.description}
+          media={contentSelected.media}
+          handleNext={() => nextContent()}
+          handlePrev={() => prevContent()}
+          onClose={() => setIsExpanded(false)}
+        />
+      ) : undefined}
+
       <div className="flex items-center justify-between">
         <button type="button" onClick={() => prevContent()} className="py-4">
           <svg
@@ -51,7 +65,7 @@ export const GameItem = ({ game }: Props) => {
         <div className="flex-1 ml-[10px]">
           <TitleText
             content={`${indexItemSelected + 1} de ${game.conteudo.length}. ${
-              conteudoSelecionado.title
+              contentSelected.title
             }`}
           ></TitleText>
         </div>
@@ -74,27 +88,33 @@ export const GameItem = ({ game }: Props) => {
       </div>
 
       <div>
-        {conteudoSelecionado.media.youtube ? (
+        {contentSelected.media.youtube ? (
           <iframe
             width="560"
             height="315"
-            src={`https://www.youtube.com/embed/${conteudoSelecionado.media.youtube}`}
+            src={`https://www.youtube.com/embed/${contentSelected.media.youtube}`}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            className=" min-h-[422px] w-full h-full object-cover border-2 border-white rounded-[3px]"
+            className="min-h-[422px] w-full h-full object-cover border-2 border-white rounded-[3px]"
           ></iframe>
-        ) : conteudoSelecionado.media.imagem ? (
-          <img
-            src={conteudoSelecionado.media.imagem}
-            alt=""
-            className="w-full h-full object-cover border-2 border-white rounded-[3px]"
-          />
+        ) : contentSelected.media.imagem ? (
+          <button
+            type="button"
+            className="cursor-pointer"
+            onClick={() => setIsExpanded(true)}
+          >
+            <img
+              src={contentSelected.media.imagem}
+              alt=""
+              className="w-full h-full object-cover border-2 border-white rounded-[3px]"
+            />
+          </button>
         ) : undefined}
       </div>
 
-      {conteudoSelecionado.description}
+      {contentSelected.description}
 
       <div className="flex items-center justify-between mt-[23px]">
         <PrevAndNextButton typeAction="prev" action={() => prevContent()} />

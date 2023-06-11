@@ -1,5 +1,10 @@
 import { ReactNode } from "react";
 
+export type mediaType = {
+  youtube?: string;
+  imagem?: string;
+};
+
 export type dataGamesType = {
   name: string;
   classificação:
@@ -12,10 +17,7 @@ export type dataGamesType = {
 
   conteudo: {
     title: string;
-    media: {
-      youtube?: string;
-      imagem?: string;
-    };
+    media: mediaType;
     description: ReactNode;
   }[];
 };

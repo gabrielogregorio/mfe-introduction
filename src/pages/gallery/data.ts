@@ -61,11 +61,13 @@ import ImgSun8 from "./assets/sun/8.jpg";
 import ImgSun9 from "./assets/sun/9.jpg";
 import ImgSun10 from "./assets/sun/10.jpg";
 
-export const dataGalleryImages: {
+export type GalleryType = {
   src: string;
   description: string;
   id: string;
-}[] = [
+};
+
+export const dataGalleryImages: GalleryType[] = [
   { src: Img1, description: "", id: "1" },
   { src: Img2, description: "", id: "2" },
   { src: Img3, description: "", id: "3" },
