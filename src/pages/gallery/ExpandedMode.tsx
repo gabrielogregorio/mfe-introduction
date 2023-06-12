@@ -1,6 +1,7 @@
-import { Button, TitleText } from "ogregorio-component-library-studies";
+import { TitleText } from "ogregorio-component-library-studies";
 import { ReactNode } from "react";
 import { mediaType } from "../games/data";
+import { ButtonShared } from "../../shared/ButtonShared";
 
 type expandedModoType = {
   title: string;
@@ -25,7 +26,7 @@ export const ExpandedMode = ({
 
       <div className="w-full relative">
         <div className="absolute top-1/2 -left-[3rem]">
-          <Button
+          <ButtonShared
             onClick={() => handlePrev()}
             content=""
             iconLeft={
@@ -46,7 +47,7 @@ export const ExpandedMode = ({
         </div>
 
         <div className="absolute top-1/2 -right-[3rem]">
-          <Button
+          <ButtonShared
             onClick={() => handleNext()}
             content=""
             iconRight={
@@ -93,7 +94,7 @@ export const ExpandedMode = ({
       <div className="w-full">{description}</div>
 
       <div className="flex items-center w-full mt-[10px]">
-        <Button
+        <ButtonShared
           iconLeft={
             <svg
               width="11"
@@ -114,10 +115,10 @@ export const ExpandedMode = ({
         />
 
         <div className="flex-1"></div>
-        <Button onClick={() => onClose()} content={"CANCELAR"} />
+        <ButtonShared onClick={() => onClose()} content={"CANCELAR"} />
         <div className="flex-1"></div>
 
-        <Button
+        <ButtonShared
           iconRight={
             <svg
               width="11"

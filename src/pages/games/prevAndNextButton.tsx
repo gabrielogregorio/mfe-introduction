@@ -1,4 +1,4 @@
-import { Button } from "ogregorio-component-library-studies";
+import { ButtonShared } from "../../shared/ButtonShared";
 
 export const PrevAndNextButton = ({
   action,
@@ -9,7 +9,7 @@ export const PrevAndNextButton = ({
 }) => {
   if (typeAction === "next") {
     return (
-      <Button
+      <ButtonShared
         iconRight={
           <svg
             width="11"
@@ -32,7 +32,7 @@ export const PrevAndNextButton = ({
   }
 
   return (
-    <Button
+    <ButtonShared
       iconLeft={
         <svg
           width="11"
@@ -49,7 +49,7 @@ export const PrevAndNextButton = ({
         </svg>
       }
       onClick={() => action()}
-      content={ "VOLTAR"}
+      content={"VOLTAR"}
     />
   );
 };

@@ -1,15 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import { ReactNode, useState } from "react";
 import { ModelListScreen } from "./screens/modelScreenList";
-
 import {
   LayoutScreen,
-  ItemSimpleMenu,
   useHandleKeyboard,
   TitleSimpleMenu,
   LinkExternal,
   GridDefault,
 } from "ogregorio-component-library-studies";
+import Bg1 from "../../assets/bg1.webp";
+import { dataIcons } from "./dataIcons";
+import { dataJob } from "./dataJobs";
+import { dataStudies } from "./dataStudies";
+import { dataExtraCourses } from "./dataExtraCourses";
+import { AboutIntroductionScreen } from "./screens/introduction";
+import { ItemSimpleMenuShared } from "../../shared/ItemSimpleMenuShared";
 
 enum AboutScreensEnum {
   "Introduction" = "Introduction",
@@ -17,14 +22,6 @@ enum AboutScreensEnum {
   "Studies" = "Studies",
   "Courses" = "Courses",
 }
-
-import Bg1 from "../../assets/bg1.webp";
-
-import { dataIcons } from "./dataIcons";
-import { dataJob } from "./dataJobs";
-import { dataStudies } from "./dataStudies";
-import { dataExtraCourses } from "./dataExtraCourses";
-import { AboutIntroductionScreen } from "./screens/introduction";
 
 export const About = () => {
   const navigate = useNavigate();
@@ -64,28 +61,28 @@ export const About = () => {
           <div className="flex flex-col justify-center items-start">
             <TitleSimpleMenu content="INFORMAÇÕES GERAIS" />
 
-            <ItemSimpleMenu
+            <ItemSimpleMenuShared
               level="1"
               isSelected={screenSelected === AboutScreensEnum.Introduction}
               onClick={() => setScreenSelected(AboutScreensEnum.Introduction)}
               content="INTRODUÇÃO"
             />
 
-            <ItemSimpleMenu
+            <ItemSimpleMenuShared
               level="1"
               isSelected={screenSelected === AboutScreensEnum.Professional}
               onClick={() => setScreenSelected(AboutScreensEnum.Professional)}
               content="PROFESSIONAL"
             />
 
-            <ItemSimpleMenu
+            <ItemSimpleMenuShared
               level="1"
               isSelected={screenSelected === AboutScreensEnum.Courses}
               onClick={() => setScreenSelected(AboutScreensEnum.Courses)}
               content="CURSOS"
             />
 
-            <ItemSimpleMenu
+            <ItemSimpleMenuShared
               level="1"
               isSelected={screenSelected === AboutScreensEnum.Studies}
               onClick={() => setScreenSelected(AboutScreensEnum.Studies)}

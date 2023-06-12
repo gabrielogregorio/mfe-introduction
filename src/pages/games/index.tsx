@@ -7,9 +7,9 @@ import {
   useHandleKeyboard,
   LayoutScreen,
   GridDefault,
-  ItemSimpleMenu,
   TitleSimpleMenu,
 } from "ogregorio-component-library-studies";
+import { ItemSimpleMenuShared } from "../../shared/ItemSimpleMenuShared";
 
 export const Games = () => {
   const navigate = useNavigate();
@@ -51,7 +51,7 @@ export const Games = () => {
                 return (
                   <div className="w-full flex-1" key={game.id}>
                     <div className="flex w-full justify-between items-center">
-                      <ItemSimpleMenu
+                      <ItemSimpleMenuShared
                         onClick={() => handleSelectNewGame(game.id)}
                         content={game.name}
                       />

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Bg1 from "../../assets/bg1.webp";
-import { ItemMainMenu } from "ogregorio-component-library-studies";
+import { ItemMainMenuShared } from "../../shared/ItemMainMenuShared";
 
 const Introduction = () => {
   const navigate = useNavigate();
@@ -13,29 +13,32 @@ const Introduction = () => {
 
         <div className="absolute min-w-[100vw] min-h-[100vh] max-h-[100vh] max-w-[100vw] overflow-y-auto scrollbar top-0 bg-black/70 left-0 z-20 animate-fadeOutDrop">
           <div className="pt-[270px] px-[80px] flex flex-col justify-center items-start">
-            <ItemMainMenu
+            <ItemMainMenuShared
               onClick={() => navigate("/about")}
               content="INICIAR"
             />
 
-            <ItemMainMenu
+            <ItemMainMenuShared
               onClick={() => navigate("remaining-money")}
               content="QUANTO SOBRA"
             />
 
-            <ItemMainMenu
+            <ItemMainMenuShared
               onClick={() => navigate("tasks")}
               content="MINHAS TASKS"
             />
 
-            <ItemMainMenu onClick={() => navigate("ux")} content="HELP UX" />
+            <ItemMainMenuShared
+              onClick={() => navigate("ux")}
+              content="HELP UX"
+            />
 
-            <ItemMainMenu
+            <ItemMainMenuShared
               onClick={() => navigate("Games")}
               content="ANÁLISE DE JOGOS"
             />
 
-            <ItemMainMenu
+            <ItemMainMenuShared
               onClick={() => navigate("galeria")}
               content="GALERIA"
             />
