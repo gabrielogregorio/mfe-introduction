@@ -1,5 +1,5 @@
 {
-  "name": "@mfe/mfe-introduction",
+  "name": "@mfe/introduction",
   "version": "1.0.0",
   "scripts": {
     "start": "webpack serve",

@@ -17,7 +17,7 @@ const tailwindConfig = {
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
     orgName: "mfe",
-    projectName: "mfe-introduction",
+    projectName: "introduction",
     webpackConfigEnv,
     argv,
   });
