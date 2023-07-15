@@ -4,7 +4,7 @@
     "jsx": "react-jsx",
     "declarationDir": "dist"
   },
-  "files": ["src/mfe-mfe-introduction.tsx"],
+  "files": ["src/mfe-introduction.tsx"],
   "include": ["src/**/*"],
   "exclude": ["src/**/*.test*"]
 }
