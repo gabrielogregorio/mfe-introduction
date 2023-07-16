@@ -1,5 +1,4 @@
-/// <reference types="react" />
-import { dataListIntroductionType } from "./types";
+import { dataListIntroductionType } from './types';
 type Props = {
     title: string;
     data: dataListIntroductionType[];

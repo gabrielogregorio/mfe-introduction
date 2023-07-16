@@ -1,11 +1,11 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 export type mediaType = {
     youtube?: string;
     imagem?: string;
 };
 export type dataGamesType = {
     name: string;
-    classificação: "obra de prima" | "excelente" | "muito bom" | "ok" | "jogando...";
+    classificação: 'obra de prima' | 'excelente' | 'muito bom' | 'ok' | 'jogando...';
     id: string;
     conteudo: {
         title: string;

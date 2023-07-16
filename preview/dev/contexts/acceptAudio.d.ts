@@ -1,4 +1,4 @@
-import { Context, ReactElement, ReactNode } from "react";
+import { Context, ReactElement, ReactNode } from 'react';
 type AcceptAudioContextType = {
     acceptAudio: boolean;
     setAcceptAudio: (acceptAudio: boolean) => void;

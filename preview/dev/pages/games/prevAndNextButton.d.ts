@@ -1,5 +1,4 @@
-/// <reference types="react" />
-export declare const PrevAndNextButton: ({ action, typeAction, }: {
+export declare const PrevAndNextButton: ({ action, typeAction }: {
     action: () => void;
-    typeAction: "next" | "prev";
+    typeAction: 'next' | 'prev';
 }) => JSX.Element;

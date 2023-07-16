@@ -1,5 +1,4 @@
-/// <reference types="react" />
-import { dataGamesType } from "./data";
+import { dataGamesType } from './data';
 type Props = {
     game: dataGamesType;
 };

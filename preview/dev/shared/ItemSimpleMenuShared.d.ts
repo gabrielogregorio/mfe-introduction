@@ -1,3 +1,2 @@
-/// <reference types="react" />
-import { ItemSimpleMenuProps } from "ogregorio-component-library-studies";
+import { ItemSimpleMenuProps } from 'ogregorio-component-library-studies';
 export declare const ItemSimpleMenuShared: ({ onClick, ...props }: ItemSimpleMenuProps) => JSX.Element;
