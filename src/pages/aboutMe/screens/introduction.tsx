@@ -1,5 +1,5 @@
-import { Text, TitleText } from "ogregorio-component-library-studies";
-import Profile from "../assets/profile.png";
+import { Text, TitleText } from 'ogregorio-component-library-studies';
+import Profile from '../assets/profile.png';
 
 export const AboutIntroductionScreen = () => {
   return (
@@ -8,11 +8,7 @@ export const AboutIntroductionScreen = () => {
 
       <div className="flex">
         <div>
-          <img
-            src={Profile}
-            alt="foto do gabriel gregório"
-            className="object-cover"
-          />
+          <img src={Profile} alt="foto do gabriel gregório" className="object-cover" />
         </div>
         <div className="flex-1 ml-[23px]">
           <Text content="Olá," />

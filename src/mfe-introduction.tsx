@@ -1,9 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import singleSpaReact from "single-spa-react";
-import App from "./index";
-import { AcceptAudioProvider } from "./contexts/acceptAudio";
-import "./tailwind.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import singleSpaReact from 'single-spa-react';
+import App from './index';
+import { AcceptAudioProvider } from './contexts/acceptAudio';
+import './tailwind.css';
 
 const lifeCycles = singleSpaReact({
   React,
@@ -15,6 +15,7 @@ const lifeCycles = singleSpaReact({
       </AcceptAudioProvider>
     );
   },
+  // @ts-ignore
   errorBoundary() {
     return null;
   },

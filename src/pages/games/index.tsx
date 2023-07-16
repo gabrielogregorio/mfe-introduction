@@ -1,25 +1,18 @@
-import Bg1 from "../../assets/bg1.webp";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { dataGames, dataGamesType } from "./data";
-import { GameItem } from "./gameItem";
-import {
-  useHandleKeyboard,
-  LayoutScreen,
-  GridDefault,
-  TitleSimpleMenu,
-} from "ogregorio-component-library-studies";
-import { ItemSimpleMenuShared } from "../../shared/ItemSimpleMenuShared";
+import Bg1 from '../../assets/bg1.webp';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { dataGames, dataGamesType } from './data';
+import { GameItem } from './gameItem';
+import { useHandleKeyboard, LayoutScreen, GridDefault, TitleSimpleMenu } from 'ogregorio-component-library-studies';
+import { ItemSimpleMenuShared } from '../../shared/ItemSimpleMenuShared';
 
 export const Games = () => {
   const navigate = useNavigate();
-  const [gameSelected, setgameSelected] = useState<dataGamesType | null>(
-    dataGames[0]
-  );
+  const [gameSelected, setgameSelected] = useState<dataGamesType | null>(dataGames[0]);
 
   useHandleKeyboard((key) => {
-    if (key === "Escape") {
-      navigate("/");
+    if (key === 'Escape') {
+      navigate('/');
     }
   });
 
@@ -36,11 +29,7 @@ export const Games = () => {
   };
 
   return (
-    <LayoutScreen
-      screenTitle="ANÁLISE DE JOGOS"
-      onReturn={() => navigate("/")}
-      bg={Bg1}
-    >
+    <LayoutScreen screenTitle="ANÁLISE DE JOGOS" onReturn={() => navigate('/')} bg={Bg1}>
       <GridDefault
         left={
           <div>
@@ -51,17 +40,11 @@ export const Games = () => {
                 return (
                   <div className="w-full flex-1" key={game.id}>
                     <div className="flex w-full justify-between items-center">
-                      <ItemSimpleMenuShared
-                        onClick={() => handleSelectNewGame(game.id)}
-                        content={game.name}
-                      />
+                      <ItemSimpleMenuShared onClick={() => handleSelectNewGame(game.id)} content={game.name} />
                       <div
                         className={`${
-                          gameSelected?.id === game.id
-                            ? "text-white"
-                            : "text-white/70"
-                        } hover:text-white font-roboto text-[1.5rem] font-normal text-right pr-[1rem]`}
-                      >
+                          gameSelected?.id === game.id ? 'text-white' : 'text-white/70'
+                        } hover:text-white font-roboto text-[1.5rem] font-normal text-right pr-[1rem]`}>
                         {game.classificação}
                       </div>
                     </div>

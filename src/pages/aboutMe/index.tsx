@@ -1,61 +1,49 @@
-import { useNavigate } from "react-router-dom";
-import { ReactNode, useState } from "react";
-import { ModelListScreen } from "./screens/modelScreenList";
+import { useNavigate } from 'react-router-dom';
+import { ReactNode, useState } from 'react';
+import { ModelListScreen } from './screens/modelScreenList';
 import {
   LayoutScreen,
   useHandleKeyboard,
   TitleSimpleMenu,
   LinkExternal,
   GridDefault,
-} from "ogregorio-component-library-studies";
-import Bg1 from "../../assets/bg1.webp";
-import { dataIcons } from "./dataIcons";
-import { dataJob } from "./dataJobs";
-import { dataStudies } from "./dataStudies";
-import { dataExtraCourses } from "./dataExtraCourses";
-import { AboutIntroductionScreen } from "./screens/introduction";
-import { ItemSimpleMenuShared } from "../../shared/ItemSimpleMenuShared";
+} from 'ogregorio-component-library-studies';
+import Bg1 from '../../assets/bg1.webp';
+import { dataIcons } from './dataIcons';
+import { dataJob } from './dataJobs';
+import { dataStudies } from './dataStudies';
+import { dataExtraCourses } from './dataExtraCourses';
+import { AboutIntroductionScreen } from './screens/introduction';
+import { ItemSimpleMenuShared } from '../../shared/ItemSimpleMenuShared';
 
 enum AboutScreensEnum {
-  "Introduction" = "Introduction",
-  "Professional" = "Professional",
-  "Studies" = "Studies",
-  "Courses" = "Courses",
+  'Introduction' = 'Introduction',
+  'Professional' = 'Professional',
+  'Studies' = 'Studies',
+  'Courses' = 'Courses',
 }
 
 export const About = () => {
   const navigate = useNavigate();
-  const [screenSelected, setScreenSelected] = useState<AboutScreensEnum>(
-    AboutScreensEnum.Introduction
-  );
+  const [screenSelected, setScreenSelected] = useState<AboutScreensEnum>(AboutScreensEnum.Introduction);
 
   const screenSelectedComponent: {
     [screen in AboutScreensEnum]: ReactNode;
   } = {
     [AboutScreensEnum.Introduction]: <AboutIntroductionScreen />,
-    [AboutScreensEnum.Professional]: (
-      <ModelListScreen title="Professional" data={dataJob} />
-    ),
-    [AboutScreensEnum.Studies]: (
-      <ModelListScreen title="Escolaridade" data={dataStudies} />
-    ),
-    [AboutScreensEnum.Courses]: (
-      <ModelListScreen title="Cursos Extras" data={dataExtraCourses} />
-    ),
+    [AboutScreensEnum.Professional]: <ModelListScreen title="Professional" data={dataJob} />,
+    [AboutScreensEnum.Studies]: <ModelListScreen title="Escolaridade" data={dataStudies} />,
+    [AboutScreensEnum.Courses]: <ModelListScreen title="Cursos Extras" data={dataExtraCourses} />,
   };
 
   useHandleKeyboard((key) => {
-    if (key === "Escape") {
-      navigate("/");
+    if (key === 'Escape') {
+      navigate('/');
     }
   });
 
   return (
-    <LayoutScreen
-      screenTitle="INTRODUÇÃO"
-      onReturn={() => navigate("/")}
-      bg={Bg1}
-    >
+    <LayoutScreen screenTitle="INTRODUÇÃO" onReturn={() => navigate('/')} bg={Bg1}>
       <GridDefault
         left={
           <div className="flex flex-col justify-center items-start">
@@ -97,28 +85,24 @@ export const About = () => {
               level="1"
               href="https://github.com/gabrielogregorio"
               content="github.com/gabrielogregorio"
-              icon={dataIcons.github}
-            ></LinkExternal>
+              icon={dataIcons.github}></LinkExternal>
             <LinkExternal
               level="1"
               href="https://twitter.com/gregoriodev"
               icon={dataIcons.twitter}
-              content="twitter.com/gregoriodev"
-            ></LinkExternal>
+              content="twitter.com/gregoriodev"></LinkExternal>
 
             <LinkExternal
               level="1"
               href="https://youtube.com/@gameplaysdiferenciadas"
               icon={dataIcons.youtube}
-              content="youtube.com/@gameplaysdiferenciadas"
-            ></LinkExternal>
+              content="youtube.com/@gameplaysdiferenciadas"></LinkExternal>
 
             <LinkExternal
               level="1"
               href="https://linkedin.com/in/gabrielogregorio"
               icon={dataIcons.linkedin}
-              content="linkedin.com/in/gabrielogregorio"
-            ></LinkExternal>
+              content="linkedin.com/in/gabrielogregorio"></LinkExternal>
           </div>
         }
         right={screenSelectedComponent[screenSelected]}
