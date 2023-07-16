@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactElement } from 'react';
 
 type Props = {
   src: string;
@@ -8,11 +8,7 @@ type Props = {
 
 export const GalleryImage = ({ src, onClick, index }: Props): ReactElement => {
   return (
-    <button
-      type="button"
-      onClick={() => onClick(index)}
-      className="flex items-center justify-center relative"
-    >
+    <button type="button" onClick={() => onClick(index)} className="flex items-center justify-center relative">
       <img
         src={src}
         alt=""

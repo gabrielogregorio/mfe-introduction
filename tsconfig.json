@@ -1,10 +1,22 @@
 {
   "extends": "ts-config-single-spa",
   "compilerOptions": {
+    "target": "ES2015",
     "jsx": "react-jsx",
-    "declarationDir": "dist"
+    "declarationDir": "dist",
+    "allowJs": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noErrorTruncation": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/shared/*": ["src/shared/*"]
+    }
   },
   "files": ["src/mfe-introduction.tsx"],
   "include": ["src/**/*"],
-  "exclude": ["src/**/*.test*"]
+  "exclude": []
 }

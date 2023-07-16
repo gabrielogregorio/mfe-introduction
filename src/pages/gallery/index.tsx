@@ -1,20 +1,17 @@
-import Bg1 from "../../assets/bg1.webp";
-import { dataGalleryImages } from "./data";
-import { GalleryImage } from "./galleryImage";
-import { useNavigate } from "react-router-dom";
-import {
-  LayoutScreen,
-  useHandleKeyboard,
-} from "ogregorio-component-library-studies";
-import { useState } from "react";
-import { ExpandedMode } from "./ExpandedMode";
+import Bg1 from '../../assets/bg1.webp';
+import { dataGalleryImages } from './data';
+import { GalleryImage } from './galleryImage';
+import { useNavigate } from 'react-router-dom';
+import { LayoutScreen, useHandleKeyboard } from 'ogregorio-component-library-studies';
+import { useState } from 'react';
+import { ExpandedMode } from './ExpandedMode';
 
 export const Galeria = () => {
   const navigate = useNavigate();
 
   useHandleKeyboard((key) => {
-    if (key === "Escape") {
-      navigate("/");
+    if (key === 'Escape') {
+      navigate('/');
     }
   });
 
@@ -42,11 +39,11 @@ export const Galeria = () => {
   const contentSelected = dataGalleryImages[indexItemSelected];
 
   return (
-    <LayoutScreen screenTitle="GALERIA" onReturn={() => navigate("/")} bg={Bg1}>
+    <LayoutScreen screenTitle="GALERIA" onReturn={() => navigate('/')} bg={Bg1}>
       <div>
         {isExpanded ? (
           <ExpandedMode
-            title={""}
+            title={''}
             description={contentSelected.description}
             media={{ imagem: contentSelected.src }}
             handleNext={() => nextContent()}
@@ -62,8 +59,8 @@ export const Galeria = () => {
                 key={image.id}
                 index={index}
                 src={image.src}
-                onClick={(index) => {
-                  setIndexItemSelected(index);
+                onClick={(indexLocal) => {
+                  setIndexItemSelected(indexLocal);
                   setIsExpanded(true);
                 }}
               />

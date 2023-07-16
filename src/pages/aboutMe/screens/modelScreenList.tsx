@@ -1,5 +1,5 @@
-import { Text, TitleText } from "ogregorio-component-library-studies";
-import { dataListIntroductionType } from "./types";
+import { Text, TitleText } from 'ogregorio-component-library-studies';
+import { dataListIntroductionType } from './types';
 
 type Props = {
   title: string;
@@ -19,8 +19,7 @@ export const ModelListScreen = ({ title, data }: Props) => {
             <button
               type="button"
               key={job.title}
-              className="flex flex-col justify-center items-start hover:scale-105 transition-all duration-150 hover:bg-black/30 px-4 py-6 rounded-[3px]"
-            >
+              className="flex flex-col justify-center items-start hover:scale-105 transition-all duration-150 hover:bg-black/30 px-4 py-6 rounded-[3px]">
               <div className="flex items-center justify-start">
                 <div>
                   <img
@@ -36,11 +35,7 @@ export const ModelListScreen = ({ title, data }: Props) => {
                 </div>
               </div>
 
-              <div>
-                {job.description.trim() ? (
-                  <Text content={job.description} />
-                ) : undefined}
-              </div>
+              <div>{job.description.trim() ? <Text content={job.description} /> : undefined}</div>
             </button>
           );
         })}

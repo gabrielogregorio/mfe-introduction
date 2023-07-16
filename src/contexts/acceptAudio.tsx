@@ -1,21 +1,11 @@
-import {
-  Context,
-  createContext,
-  Dispatch,
-  ReactElement,
-  ReactNode,
-  SetStateAction,
-  useMemo,
-  useState,
-} from "react";
+import { Context, createContext, Dispatch, ReactElement, ReactNode, SetStateAction, useMemo, useState } from 'react';
 
 type AcceptAudioContextType = {
   acceptAudio: boolean;
   setAcceptAudio: (acceptAudio: boolean) => void;
 };
 
-export const AcceptAudioContext: Context<AcceptAudioContextType> =
-  createContext({} as AcceptAudioContextType);
+export const AcceptAudioContext: Context<AcceptAudioContextType> = createContext({} as AcceptAudioContextType);
 
 type Props = {
   children: ReactNode;
@@ -29,9 +19,5 @@ export const AcceptAudioProvider = ({ children }: Props): ReactElement => {
     setAcceptAudio: Dispatch<SetStateAction<boolean>>;
   } = useMemo(() => ({ acceptAudio, setAcceptAudio }), [acceptAudio]);
 
-  return (
-    <AcceptAudioContext.Provider value={value}>
-      {children}
-    </AcceptAudioContext.Provider>
-  );
+  return <AcceptAudioContext.Provider value={value}>{children}</AcceptAudioContext.Provider>;
 };

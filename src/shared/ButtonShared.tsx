@@ -1,10 +1,6 @@
-import {
-  Button,
-  ButtonProps,
-  useAudio,
-} from "ogregorio-component-library-studies";
-import HoverSound from "./hoverSound.mp3";
-import ClickSound from "./clicksound.mp3";
+import { Button, ButtonProps, useAudio } from 'ogregorio-component-library-studies';
+import HoverSound from './hoverSound.mp3';
+import ClickSound from './clicksound.mp3';
 
 export const ButtonShared = ({ onClick, ...props }: ButtonProps) => {
   const clickSound = useAudio(ClickSound);
