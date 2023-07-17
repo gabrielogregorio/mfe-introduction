@@ -52,6 +52,8 @@ export const Galeria = () => {
           />
         ) : undefined}
 
+        <div>TESTE</div>
+
         <div className="grid grid-cols-3 gap-[30px] px-[2rem]">
           {dataGalleryImages.map((image, index) => {
             return (
